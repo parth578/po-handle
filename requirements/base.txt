@@ -1,1 +1,10 @@
 django==4.2.8
+
+# Django env Configuration
+django-environ==0.11.2
+
+# Mysqlclient
+mysqlclient==2.2.0
+
+# Pillow for Imagefield
+Pillow==10.1.0
