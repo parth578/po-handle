@@ -55,6 +55,9 @@ LOCAL_APPS = [
 
     "po_handle",
     "user",
+    "product",
+    "vendor",
+    "purchase_order",
     
 ]
 THIRD_PARTY_APPS = [
