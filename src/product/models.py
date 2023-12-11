@@ -3,13 +3,23 @@ from django.contrib.auth.models import AbstractUser
 from base.models import BaseModel
 from django.utils.translation import gettext_lazy as _
 
-class product(BaseModel):
-     
-    product_name = models.CharField(_("Name"), max_length=20)
-    product_price = models.FloatField()
-    product_descreption = models.CharField(_("Name"),max_length=500)
-    is_ban = models.BooleanField(_("Name"),max_length=20)
-    # hazmat_type = models.
 
 
-# Create your models here.
+class Product(BaseModel):
+    REGULAR = "R"
+    HAZMAT = "H"
+
+    HAZAMAT_CHOISES = (
+        (REGULAR, "Regular"),
+        (HAZMAT, "Hazmat"),
+    )
+
+    name = models.CharField(_("Product Name"), max_length=255)
+    price = models.FloatField(_("Price"), default=0.0)
+    descreption = models.CharField(
+        _("descreption"), max_length=255, null=True, blank=True
+    )
+    is_ban = models.BooleanField(default=False)
+    hazmat_type = models.CharField(_("Hazamt Type"), max_length=255, choices=HAZAMAT_CHOISES, default=REGULAR)
+
+
