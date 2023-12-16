@@ -8,3 +8,6 @@ mysqlclient==2.2.0
 
 # Pillow for Imagefield
 Pillow==10.1.0
+
+# djlint for HTML formatter
+djlint==1.34.0
