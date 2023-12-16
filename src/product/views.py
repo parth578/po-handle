@@ -8,6 +8,7 @@ from django_datatables_too.mixins import DataTableMixin
 from product.models import Product
 from django.template.loader import get_template
 from django.db.models import Q
+from django.contrib.messages.views import SuccessMessageMixin
 
 # Create your views here.
 
@@ -17,7 +18,7 @@ class ProductListView(BaseListView):
     model = Product
     template_name = "product/list_product.html"
 
-class ProductCreateView(BaseCreateView):
+class ProductCreateView(SuccessMessageMixin, BaseCreateView):
     model = Product
     form_class = ProductCreateForm
     success_message = "Product Created Successfully!!"
@@ -92,7 +93,7 @@ class ProductDataTablesAjaxPagination(DataTableMixin, BaseView):
         return JsonResponse(context_data)    
     
 
-class ProductUpdateView(BaseUpdateView):
+class ProductUpdateView(SuccessMessageMixin, BaseUpdateView):
     model = Product
     form_class = ProductUpdateForm
     success_message = "Product Updated Successfully!!"

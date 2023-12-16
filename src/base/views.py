@@ -11,20 +11,19 @@ from django.views.generic import (
     View,
 )
 from django.views.generic.edit import FormView
-from django.contrib.messages.views import SuccessMessageMixin
 
 
 
 # -----------------------------------------------------------------------------
 # Generic Views
 # -----------------------------------------------------------------------------
-class BaseView(SuccessMessageMixin, LoginRequiredMixin, View):
+class BaseView(LoginRequiredMixin, View):
     """View with LoginRequiredMixin and PermissionRequiredMixin."""
 
     pass
 
 
-class BaseRedirectView(SuccessMessageMixin, LoginRequiredMixin, RedirectView):
+class BaseRedirectView(LoginRequiredMixin, RedirectView):
     """
     Return the URL redirect to. Keyword arguments from the URL pattern
     match generating the redirect request are provided as kwargs to this
@@ -34,19 +33,19 @@ class BaseRedirectView(SuccessMessageMixin, LoginRequiredMixin, RedirectView):
     pass
 
 
-class BaseLoginRequiredView(SuccessMessageMixin, LoginRequiredMixin, View):
+class BaseLoginRequiredView(LoginRequiredMixin, View):
     """View with LoginRequiredMixin."""
 
     pass
 
 
-class BaseTemplateView(SuccessMessageMixin, LoginRequiredMixin, TemplateView):
+class BaseTemplateView(LoginRequiredMixin, TemplateView):
     """TemplateView CBV with LoginRequiredMixin and PermissionRequiredMixin."""
 
     pass
 
 
-class BaseFormView(SuccessMessageMixin, LoginRequiredMixin, FormView):
+class BaseFormView(LoginRequiredMixin, FormView):
     """FormView CBV with LoginRequiredMixin and PermissionRequiredMixin."""
 
     pass
@@ -61,7 +60,7 @@ class BaseListView(
     pass
 
 
-class BaseDetailView(SuccessMessageMixin, LoginRequiredMixin, DetailView):
+class BaseDetailView(LoginRequiredMixin, DetailView):
     """DetailView CBV with LoginRequiredMixin and PermissionRequiredMixin."""
 
     pass
