@@ -22,9 +22,22 @@
   <div class="sidebar-content main-menu-content">
     <div class="nav-container">
       <ul class="navigation navigation-main" id="main-menu-navigation" data-menu="menu-navigation">
-        <li class="active">
-          <a href="#"><i class="ft-grid"></i><span class="menu-title" data-i18n="Email">Dashboard</span></a>
+        <li class="{% if not 'product' in request.path %}active{% endif %}">
+          <a href="{% url 'base_tempalteview' %}"><i class="ft-grid"></i><span class="menu-title" data-i18n="Email">Dashboard</span></a>
         </li>
+        <li class="{% if 'product' in request.path %}active{% endif %}">
+          <a href="{% url 'product:list_product' %}"><i class="ft-grid"></i><span class="menu-title" data-i18n="Email">Product</span></a>
+        </li>
+        {% comment %} <li class="has-sub nav-item"><a href=""><i class="ft-package"></i><span class="menu-title"
+          data-i18n="Dashboard">Product</span></a>
+      <ul class="menu-content">
+        <li
+          class="">
+          <a href="{% url 'product:list_product' %}"><i class="ft-square"></i><span class="menu-title"
+              data-i18n="Email">Product List</span></a>
+        </li>
+      </ul>
+    </li>         {% endcomment %}
       </ul>
     </div>
   </div>
