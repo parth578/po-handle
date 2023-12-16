@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}Product Detail{% endblock title %}
+{% block sidebar %}
+{% endblock sidebar %}
+{% block bodycontent %}
+<div class="container">
+    <div class="row justify-content-center">
+      <div class="col-md-8">
+        <h2 class="text-center">{{ product.name }}</h2>
+        <!-- Display other product details as needed -->
+        <div class="text-center">
+          <img src="{% if product.image %}{{ product.image.url }}{% else %}{% static 'images/product-image.png' %}{% endif %}" alt="Product Image" class="img-fluid">
+        </div>
+        <!-- Add other product details here -->
+      </div>
+    </div>
+  </div>
+{% endblock bodycontent %}

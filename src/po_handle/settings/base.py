@@ -61,6 +61,8 @@ LOCAL_APPS = [
     
 ]
 THIRD_PARTY_APPS = [
+    "crispy_forms",
+    "crispy_bootstrap4",
     
 ]
 
@@ -170,3 +172,8 @@ MEDIA_ROOT = os.path.join(APPS_DIR, "media")
 MEDIA_URL = "/media/"
 
 DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
+
+
+# Crispy Settings
+CRISPY_ALLOWED_TEMPLATE_PACKS = "bootstrap4"
+CRISPY_TEMPLATE_PACK = "bootstrap4"
