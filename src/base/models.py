@@ -7,3 +7,7 @@ class BaseModel(models.Model):
 
     class Meta:
         abstract = True
+
+class Tet(BaseModel):
+    class Meta:
+        abstract = True    
