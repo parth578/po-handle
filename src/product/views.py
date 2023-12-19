@@ -3,7 +3,7 @@ from django.shortcuts import render
 from django.urls import reverse, reverse_lazy
 from base.views import BaseCreateView, BaseDetailView, BaseListView, BaseUpdateView, BaseView
 from product.forms import ProductCreateForm, ProductUpdateForm
-from django_datatables_too.mixins import DataTableMixin
+from django.datatables_too.mixins import DataTableMixin
 
 from product.models import Product
 from django.template.loader import get_template

@@ -17,3 +17,7 @@ crispy-bootstrap4==2023.1
 
 # Django-datatables-serverside
 django-datatables-too==0.1.4
+
+# djando-crispy-forms
+django-crispy-forms==2.1
+django-crispy-forms==4.8.0

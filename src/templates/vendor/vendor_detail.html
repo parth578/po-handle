@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}Vendor Detail{% endblock title %}
+{% block sidebar %}
+{% endblock sidebar %}
+{% block bodycontent %}
+<div class="container">
+    <div class="row justify-content-center">
+      <div class="col-md-8">
+        <h2 class="text-center">{{ vendor.name }}</h2>
+        <!-- Display other vendor details as needed -->
+        <div class="text-center">
+          <img src="{% if vendor.image %}{{ vendor.image.url }}{% else %}{% static 'images/vendor-image.png' %}{% endif %}" alt="vendor Image" class="img-fluid">
+        </div>
+        <!-- Add other vendor details here -->
+      </div>
+    </div>
+  </div>
+{% endblock bodycontent %}
