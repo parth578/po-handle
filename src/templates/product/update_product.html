@@ -1,0 +1,75 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}{% if form.instance.id %}Update Product{% else %}Add Product{% endif %}{% endblock title %}
+{% block bodycontent %}
+{% load crispy_forms_tags %}
+<style>
+  .asteriskField {
+    color: red;
+  }
+</style>
+<section id="action-form-layout">
+  <div class="row match-height">
+    <div class="col-12">
+      <div class="card">
+        <div class="card-header">
+          <h4 class="card-title">Add Product</h4>
+        </div>
+        <div class="card-content">
+          <div class="card-body">
+            <form action="" method="post" enctype="multipart/form-data" novalidate>
+              {% csrf_token %}
+
+              {{ form.name|as_crispy_field }}
+
+              {# Customize rendering for the 'image' field #}
+              <fieldset class="form-group">
+                <label for="id_image">With Browse button</label>
+                <div class="custom-file">
+                  <input type="file" class="custom-file-input {% if form.image.errors %}is-invalid{% endif %}" id="id_image" name="image">
+                  <label class="custom-file-label" for="id_image">Choose file</label>
+                </div>
+                {% if form.image.errors %}
+              <div class="invalid-feedback" style="display: block; font-weight: bold;">
+                    {% for error in form.image.errors %}
+                      {{ error }}
+                    {% endfor %}
+                  </div>
+                {% endif %}
+              </fieldset> 
+                       
+              {{ form.price|as_crispy_field }}
+              {{ form.descreption|as_crispy_field }}
+              {{ form.is_ban|as_crispy_field }}
+              {{ form.hazmat_type|as_crispy_field }}
+              {{ form.status|as_crispy_field }}
+                          
+              {# Display non-field errors #}
+              {% if form.non_field_errors %}
+                <div class="alert alert-danger">
+                  {% for error in form.non_field_errors %}
+                    {{ error }}
+                  {% endfor %}
+                </div>
+              {% endif %}              
+          
+              <button type="submit" class="btn btn-primary mr-2"><i class="ft-check-square mr-1"></i>Update</button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+{% endblock %}
+
+
+{% block script %}
+
+<script>
+  $('.select2-list').select2({
+    width: "100%",
+  });
+</script>
+
+{% endblock script %}

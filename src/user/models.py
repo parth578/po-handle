@@ -19,8 +19,8 @@ class User(AbstractUser, BaseModel):
         (VENDOR, "Vendor"),
     )
 
-    full_name = models.CharField(_("Name"), max_length=20)
-    profile_photo = models.ImageField(_("Image"), upload_to="user-profile")
-    role = models.CharField(_("Role"), choices=USER_ROLE, max_length=20)
-    phone_number = models.CharField(_("Name"), max_length=20, null=True, blank=True)
+    full_name = models.CharField(_("Name"), max_length=255)
+    profile_photo = models.ImageField(_("Image"), upload_to="user-profile",null=True,blank=True)
+    role = models.CharField(_("Role"), choices=USER_ROLE, max_length=255)
+    phone_number = models.CharField(_("Phone"), max_length=20, null=True, blank=True)
     email = models.EmailField(_("Email"), unique=True)

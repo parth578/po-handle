@@ -1,10 +1,19 @@
 ### Python template
+# Django #
+*.log
+*.pot
+*.pyc
+__pycache__
+db.sqlite3
+media
+
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]
 *$py.class
 .idea/
 .vscode/
+.pyc
 
 # C extensions
 *.so

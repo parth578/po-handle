@@ -1,0 +1,55 @@
+{% load static %}
+<!-- main menu-->
+<!--.main-menu(class="#{menuColor} #{menuOpenType}", class=(menuShadow == true ? 'menu-shadow' : ''))-->
+<div class="app-sidebar menu-fixed" data-background-color="flickr" data-scroll-to-active="true">
+  <!-- main menu header-->
+  <!-- Sidebar Header starts-->
+  <div class="sidebar-header">
+    <div class="logo clearfix">
+      <a class="logo-text float-left" href="#">
+        <div class="logo-img">
+          <img src="{% static 'app-assets/img/logo.png' %}" alt="Apex Logo" />
+        </div>
+        <span class="text">APEX</span>
+      </a><a class="nav-toggle d-none d-lg-none d-xl-block" id="sidebarToggle" href="javascript:;"><i
+          class="toggle-icon ft-toggle-right" data-toggle="expanded"></i></a><a
+        class="nav-close d-block d-lg-block d-xl-none" id="sidebarClose" href="javascript:;"><i class="ft-x"></i></a>
+    </div>
+  </div>
+  <!-- Sidebar Header Ends-->
+  <!-- / main menu header-->
+  <!-- main menu content-->
+  <div class="sidebar-content main-menu-content">
+    <div class="nav-container">
+      <ul class="navigation navigation-main" id="main-menu-navigation" data-menu="menu-navigation">
+        <li class="{% if not 'product' in request.path %}active{% endif %}">
+          <a href="{% url 'base_tempalteview' %}"><i class="ft-grid"></i><span class="menu-title" data-i18n="Email">Dashboard</span></a>
+        </li>
+        <li class="{% if 'product' in request.path %}active{% endif %}">
+          <a href="{% url 'product:list_product' %}"><i class="ft-grid"></i><span class="menu-title" data-i18n="Email">Product</span></a>
+        </li>
+        {% comment %} <li class="has-sub nav-item"><a href=""><i class="ft-package"></i><span class="menu-title"
+          data-i18n="Dashboard">Product</span></a>
+      <ul class="menu-content">
+        <li
+          class="">
+          <a href="{% url 'product:list_product' %}"><i class="ft-square"></i><span class="menu-title"
+              data-i18n="Email">Product List</span></a>
+        </li>
+      </ul>
+    </li>         {% endcomment %}
+      </ul>
+    </div>
+  </div>
+  <!-- main menu content-->
+  <div class="sidebar-background"></div>
+  <!-- main menu footer-->
+  <!-- include includes/menu-footer-->
+  <!-- main menu footer-->
+  <!-- / main menu-->
+</div>
+<div class="main-panel">
+  <!-- BEGIN : Main Content-->
+  <div class="main-content">
+    <div class="content-overlay"></div>
+    <div class="content-wrapper"><!--Statistics cards Starts-->
